@@ -23,7 +23,6 @@ import type { ResolvedProxyMember } from '@/types/proxy-view'
 
 import { ProxyGroupHeaderBlock } from './proxy-group-header-block'
 import { ProxyGroupTools } from './proxy-group-tools'
-import { ProxyHead } from './proxy-head'
 import { ProxyItem } from './proxy-item'
 import { ProxyItemMini } from './proxy-item-mini'
 import type { HeadState } from './use-head-state'
@@ -240,20 +239,6 @@ export const ProxyRender = memo(function ProxyRender(props: RenderProps) {
           </Box>
         </ListItemButton>
       </div>
-    )
-  }
-
-  if (type === 1) {
-    return (
-      <ProxyHead
-        sx={{ pl: 2, pr: 3, mt: 0.5, mb: 1 }}
-        url={group.testUrl}
-        groupName={group.name}
-        headState={headState!}
-        onLocation={() => onLocation(group)}
-        onCheckDelay={() => onCheckAll(group.name)}
-        onHeadState={(p) => onHeadState(group.name, p)}
-      />
     )
   }
 

@@ -32,7 +32,7 @@ export interface ResolvedMemberOccurrence {
 type ProxyGroup = ProxyGroupView
 
 export interface IRenderItem {
-  type: 0 | 1 | 2 | 3 | 4
+  type: 0 | 2 | 3 | 4
   key: string
   group: ProxyGroup
   member?: ResolvedMemberOccurrence
@@ -307,9 +307,6 @@ export const useRenderList = (
             useRegularExpression: headState.filterUseRegularExpression,
           },
         )
-        if (!useRule) {
-          ret.push({ type: 1, key: `head-${group.name}`, group, headState })
-        }
         if (occurrences.length === 0) {
           ret.push({ type: 3, key: `empty-${group.name}`, group, headState })
         } else if (col > 1) {
